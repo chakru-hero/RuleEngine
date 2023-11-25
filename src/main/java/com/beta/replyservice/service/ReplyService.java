@@ -9,5 +9,4 @@ import java.security.NoSuchAlgorithmException;
 public interface ReplyService {
 
     public String processString(String string, String hashAlgo) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidInputException;
-//    public String hashString(String string, String hashAlgo) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 }
