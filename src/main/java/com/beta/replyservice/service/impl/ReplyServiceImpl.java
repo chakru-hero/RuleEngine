@@ -1,7 +1,6 @@
 package com.beta.replyservice.service.impl;
 
 import com.beta.replyservice.exception.InvalidInputException;
-import com.beta.replyservice.service.HashAlgoService;
 import com.beta.replyservice.service.ReplyService;
 import com.beta.replyservice.strategy.RuleStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Objects;
 
 @Service
 public class ReplyServiceImpl implements ReplyService {
