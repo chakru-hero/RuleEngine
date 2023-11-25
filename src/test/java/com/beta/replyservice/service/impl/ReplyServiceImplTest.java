@@ -4,8 +4,11 @@ import com.beta.replyservice.exception.InvalidInputException;
 import com.beta.replyservice.service.ReplyService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,7 +17,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ContextConfiguration(classes = {ReplyServiceImpl.class})
 @ExtendWith(SpringExtension.class)
+@TestPropertySource(properties = {"Hash.Algo.Value=MD5"})
 class ReplyServiceImplTest {
+    @Value("${Hash.Algo.Value}")
+    private String DEFAULTALGO;
     @Autowired
     private ReplyService replyService;
 
