@@ -53,31 +53,6 @@ GET /v2/reply/22-kbzw9ru
 }
 ```
 
-## What you need to do
-Use the boilerplate given and implement the above requirement.
-Your implementation should also consider:
-
-- Maintain the existing endpoint for backward compatibility.
-- Implement V2 endpoint for the above new requirements.
-- Additional rules are expected in future releases. The updates in rule set
-should have minimal code changes and impact to existing functionality.
-- Testability for individual rule and the application.
-Unit tests are highly recommended.
-- Endpoints should return correct status code and response message.
-For invalid request, it should return status code `400`
-with message `"Invalid input"`, for example:
-   ```
-   GET /v2/reply/13-kbzw9ru
-   {
-       "message": "Invalid input"
-   }
-   ```
-
-Upon completing the task, please feel free to (though not required):
-
-- host your code on Github
-- include any readme to explain your setup/environment
-- add/implement anything you think would be beneficial
 
 ## Build project
 
