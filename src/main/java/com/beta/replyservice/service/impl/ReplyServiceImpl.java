@@ -18,11 +18,16 @@ public class ReplyServiceImpl implements ReplyService {
     private String DEFAULTALGO;
     @Override
     public String processString(String string, String hashAlgo) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidInputException {
-        String[] strings = string.split("-");
-        String[] rules= strings[0].split("");
+        String[] rules;
+        String[] strings;
+            if(!string.contains("-")){
+                throw new InvalidInputException("Invalid Input");
+            }
+            strings = string.split("-");
+            rules = strings[0].split("");
         for (String rule : rules) {
             if (rule.equals("1")) {
-                strings[1] = new StringBuffer(strings[1]).reverse().toString(); // is new StringBuffer needed? check if it can be reused.
+                strings[1] = new StringBuffer(strings[1]).reverse().toString();
             } else if (rule.equals("2")) {
                 strings[1] = hashString(strings[1], Objects.isNull(hashAlgo) ? DEFAULTALGO : hashAlgo);
             } else {

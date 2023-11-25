@@ -29,8 +29,12 @@ public class ReplyController {
 	}
 
 	//Version 2.0 starts here
+	@GetMapping("v2/reply")
+	public ReplyMessage replyingV2() {
+		return new ReplyMessage("Data is empty", null);
+	}
 	@GetMapping("v2/reply/{message}")
-	public ResponseEntity<ReplyMessage> newReplying(@PathVariable String message){
+	public ResponseEntity<ReplyMessage> newReplying(@PathVariable String message) throws InvalidInputException,UnsupportedEncodingException,NoSuchAlgorithmException{
 		try {
 			String data  = replyService.processString(message,null);
 			return new ResponseEntity<>(new ReplyMessage(null, data), HttpStatus.OK);
